@@ -26,7 +26,7 @@ class Tree extends Component {
         return (
             <div>
                 {treeDom}
-                <div >
+                <div className=" close">
                     {childDom}
                 </div>
             </div>

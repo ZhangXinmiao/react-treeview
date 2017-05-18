@@ -11,6 +11,19 @@ class TreeNode extends Component {
 
     handleToogle = (e) => {
         console.log(e.target);
+        let childDom = e.target.parentNode.lastChild;
+        console.log(childDom);
+        let styleStr = childDom.getAttribute("class");
+        if(styleStr.indexOf("close") === -1) {
+            console.log(1, styleStr);
+            styleStr += " close";
+        }else {
+            console.log(2, styleStr);
+            // styleStr.replace("close", "");
+            styleStr = "";
+            console.log(2, styleStr);
+        }
+        childDom.className = styleStr;
     }
 
     render () {
