@@ -15,7 +15,7 @@ module.exports = {
   module: {
     loaders: [{
       test: /\.jsx$/,
-      loader: 'babel',
+    //   loader: 'babel',
       exclude: /node_modules/,
       include: [
             path.join(__dirname, 'example')
@@ -25,6 +25,11 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         loaders: ['babel']
+      },
+      {
+        test: /\.less$/,
+        exclude: /node_modules/,
+        loader: 'style!css!less'
       }
     ]
   },

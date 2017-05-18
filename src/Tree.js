@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import TreeNode from './TreeNode';
+import './index.less';
 
 class Tree extends Component {
     constructor(props) {
@@ -28,7 +29,7 @@ class Tree extends Component {
 
     render () {
         return (
-            <div>
+            <div className="child-node">
                 {this.renderTree(this.props.viewData)}
             </div>
         );

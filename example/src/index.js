@@ -50,6 +50,6 @@ document.body.appendChild(element);
 
 render(<TreeView
     name="myComponent"
-    viewData={data}
+    viewData={childTreeData}
     onToggle = { () => { alert(2333); } }
     />, element);
