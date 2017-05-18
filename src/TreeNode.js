@@ -9,9 +9,14 @@ class TreeNode extends Component {
         this.props.onToggle();
     }
 
+    handleToogle = (e) => {
+        console.log(e.target);
+    }
+
     render () {
+        let isHead = this.props.isHead;
         return (
-            <div key={Math.random()} onClick={this.handleClick}>
+            <div key={Math.random()} onClick={isHead ? this.handleToogle : this.handleClick} >
                 {this.props.nodeName}
             </div>
         );

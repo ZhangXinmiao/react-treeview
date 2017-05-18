@@ -11,6 +11,7 @@ class TreeView extends Component {
 			<Tree
 				onToggle = {this.props.onToggle}
 				viewData = {this.props.viewData}
+				defaultOpen = {false}
 			/>
 		);
 	}

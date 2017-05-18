@@ -9,20 +9,26 @@ class Tree extends Component {
 
     renderTree = (childTreeData) => {
         let treeDom = [];
-        treeDom.push(<TreeNode key={Math.random()} nodeName={childTreeData.name} onToggle={this.props.onToggle}/>);
+        let childDom = [];
         if("children" in childTreeData) {
+            treeDom.push(<TreeNode key={Math.random()} nodeName={childTreeData.name} onToggle={this.props.onToggle} isHead={true} defaultOpen={this.props.defaultOpen}/>);
             let children = childTreeData.children;
             for(let i = 0; i < children.length; i++) {
                 if(!"children" in children[i]) {
-                    treeDom.push (<TreeNode key={Math.random()} nodeName={children[i].name} onToggle={this.props.onToggle}/>);
+                    childDom.push (<TreeNode key={Math.random()} nodeName={children[i].name} onToggle={this.props.onToggle} isHead={false} />);
                 }else {
-                    treeDom.push (<Tree key={Math.random()} viewData={children[i]} onToggle={this.props.onToggle}/>);
+                    childDom.push (<Tree key={Math.random()} viewData={children[i]} onToggle={this.props.onToggle} defaultOpen={this.props.defaultOpen}/>);
                 }
             }
+        }else {
+            treeDom.push(<TreeNode key={Math.random()} nodeName={childTreeData.name} onToggle={this.props.onToggle} isHead={false}/>)
         }
         return (
             <div>
                 {treeDom}
+                <div >
+                    {childDom}
+                </div>
             </div>
         );
     }
