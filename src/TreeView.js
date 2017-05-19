@@ -8,11 +8,13 @@ class TreeView extends Component {
 
 	render () {
 		return (
-			<Tree
-				onToggle = {this.props.onToggle}
-				viewData = {this.props.viewData}
-				defaultOpen = {false}
-			/>
+			<div className="tree-bg">
+				<Tree
+					onToggle = {this.props.onToggle}
+					viewData = {this.props.viewData}
+					defaultOpen = {false}
+				/>
+			</div>
 		);
 	}
 }
