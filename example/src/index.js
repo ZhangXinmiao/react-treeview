@@ -46,6 +46,8 @@ import TreeView from '../../src/TreeView.js';
 import {render} from 'react-dom';
 
 var element = document.createElement("div");
+element.style.width = "100px";
+element.style.height = "200px";
 document.body.appendChild(element);
 
 render(<TreeView

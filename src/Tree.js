@@ -35,7 +35,7 @@ class Tree extends Component {
 
     render () {
         return (
-            <div className="child-node">
+            <div className="child-node tree-bg">
                 {this.renderTree(this.props.viewData)}
             </div>
         );
